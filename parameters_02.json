@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_UiwapappvAZW02_name": {
+            "defaultValue": "UiwapappvAZW02",
+            "type": "String"
+        },
+        "disks_UiwapappvAZW02_OsDisk_1_name": {
+            "defaultValue": "uiwapappvazw02-osdisk",
+            "type": "String"
+        },
+		"disks_UiwapappvAZW02_DataDisk_0_name": {
+            "defaultValue": "uiwapappvazw02-data1",
+            "type": "String"
+        },
+        "networkInterfaces_uiwapappvazw02-nic_externalid": {
+            "defaultValue": "/subscriptions/1a3c8479-0046-4a6f-a2ad-397cb9a6f931/resourceGroups/rg-svc-prd-we-appv-1/providers/Microsoft.Network/networkInterfaces/uiwapappvazw02-nic",
+            "type": "String"
+		},
+			"networkInterfaces_uiwapappvazw02-nic_name": {
+            "defaultValue": "uiwapappvazw02-nic",
+            "type": "String"
+        },
+        "virtualNetworks_vn_prd_we_1_externalid": {
+            "defaultValue": "/subscriptions/1a3c8479-0046-4a6f-a2ad-397cb9a6f931/resourceGroups/rg-vn-prd-we-1/providers/Microsoft.Network/virtualNetworks/vn-prd-we-1",
+            "type": "String"
+        }
+    }
+}
