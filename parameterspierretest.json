@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_uizpatestVM_name": {
+            "value": null
+        },
+        "disks_uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33_externalid": {
+            "value": null
+        },
+        "networkInterfaces_uizpatestvm162_externalid": {
+            "value": null
+        }
+    }
+}
