@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_uizpatestVM_name": {
+            "defaultValue": "uizpatestVM",
+            "type": "String"
+        },
+        "disks_uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33_externalid": {
+            "defaultValue": "/subscriptions/8a6722e9-035b-4b46-9408-ff040ff063e2/resourceGroups/GBUI-Sbx-uizpa-RG/providers/Microsoft.Compute/disks/uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33",
+            "type": "String"
+        },
+        "networkInterfaces_uizpatestvm162_externalid": {
+            "defaultValue": "/subscriptions/8a6722e9-035b-4b46-9408-ff040ff063e2/resourceGroups/GBUI-Sbx-uizpa-RG/providers/Microsoft.Network/networkInterfaces/uizpatestvm162",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('virtualMachines_uizpatestVM_name')]",
+            "location": "uksouth",
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B2s"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_uizpatestVM_name'), '_OsDisk_1_b701242591e543dc89b61033da3ffb33')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('disks_uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33_externalid')]"
+                        }
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_uizpatestVM_name')]",
+                    "adminUsername": "uizpa",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_uizpatestvm162_externalid')]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "https://gbuisbxuizpargdiag.blob.core.windows.net/"
+                    }
+                }
+            }
+        }
+    ]
+}
