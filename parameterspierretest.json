@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "virtualMachines_2nduizpatestVM_name": {
-            "value": null
+            "value": "2nduizpatestVM"
         },
-        "disks_uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33_externalid": {
-            "value": null
+        "disks_2nduizpatestVM_OsDisk_externalid": {
+            "value": "2nduizpatestVM_OsDisk"
         },
-        "networkInterfaces_uizpatestvm163_externalid": {
-            "value": null
+        "networkInterfaces_2nduizpatestvm163_externalid": {
+            "value": "2nduizpatestvm163"
         }
     }
 }
