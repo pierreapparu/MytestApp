@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualMachines_uizpatestVM_name": {
-            "defaultValue": "uizpatestVM",
+        "virtualMachines_2nduizpatestVM_name": {
+            "defaultValue": "2nduizpatestVM",
             "type": "String"
         },
         "disks_uizpatestVM_OsDisk_1_b701242591e543dc89b61033da3ffb33_externalid": {
@@ -45,7 +45,7 @@
                     "dataDisks": []
                 },
                 "osProfile": {
-                    "computerName": "[parameters('virtualMachines_uizpatestVM_name')]",
+                    "computerName": "[parameters('virtualMachines_2nduizpatestVM_name')]",
                     "adminUsername": "uizpa",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
